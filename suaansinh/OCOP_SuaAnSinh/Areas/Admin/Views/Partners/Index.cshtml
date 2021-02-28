@@ -1,0 +1,82 @@
+﻿@model IEnumerable<OCOP_SuaAnSinh.Models.Partner>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var stt = 0;
+}
+
+<link href="~/Admin/Partners/main.css" rel="stylesheet" />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Chuyên mục đối tác</h3>
+                    <button id="btn_t" type="button" class="btn btn-info float-right">Thêm mới</button>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Tên chuyên mục
+                                </th>
+                                <th>
+                                    Đường dẫn
+                                </th>
+                                <th>
+                                    Đường dẫn ảnh
+                                </th>
+                                <th>
+                                    <i class="fas fa-cogs"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                stt++;
+                            <tr>
+                                <td>
+                                    @stt
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PathUrl)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                                </td>
+                                <td>
+                                    <a class="cursor-pointer btn-edit icon-btn" data-id="@item.PartnerId"><i class="fa fa-edit"></i></a>
+                                    <a class="cursor-pointer btn-delete icon-btn" data-id="@item.PartnerId"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+@section scripts{
+    <script src="~/Admin/Partners/index.js"></script>
+}

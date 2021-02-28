@@ -1,0 +1,49 @@
+﻿@model OCOP_SuaAnSinh.Models.ProductCategory
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ProductCategory</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PathUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PathUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrderBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CoverImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CoverImage)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProductCategoryId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

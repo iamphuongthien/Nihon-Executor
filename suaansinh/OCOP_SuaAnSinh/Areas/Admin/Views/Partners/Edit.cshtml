@@ -1,0 +1,52 @@
+﻿@model OCOP_SuaAnSinh.Models.Partner
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = null;
+}
+<div class="card middle-card">
+    <div class="card-header">
+        <h3 class="card-title">Sửa đổi chuyên mục</h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" id="btn_remove" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmEditPostCategory" }))
+        {
+            @Html.AntiForgeryToken()
+        <div>
+            @Html.HiddenFor(model => model.PartnerId)
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.OrderBy, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.OrderBy, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.OrderBy, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        }
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+        <input id="btn_save_edit" type="button" value="Lưu lại" class="btn btn-success" />
+        <a id="btn_cancel" class="btn btn-default">Thoát</a>
+    </div>
+    <!-- /.card-footer-->
+</div>
+

@@ -1,0 +1,132 @@
+﻿@model OCOP_SuaAnSinh.Models.Post
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PostId" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Abstract" class="control-label"></label>
+                <input asp-for="Abstract" class="form-control" />
+                <span asp-validation-for="Abstract" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContentHTML" class="control-label"></label>
+                <input asp-for="ContentHTML" class="form-control" />
+                <span asp-validation-for="ContentHTML" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tags" class="control-label"></label>
+                <input asp-for="Tags" class="form-control" />
+                <span asp-validation-for="Tags" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostCategoryId" class="control-label"></label>
+                <select asp-for="PostCategoryId" class="form-control" asp-items="ViewBag.PostCategoryId"></select>
+                <span asp-validation-for="PostCategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsPublish" /> @Html.DisplayNameFor(model => model.IsPublish)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsHot" /> @Html.DisplayNameFor(model => model.IsHot)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PathUrl" class="control-label"></label>
+                <input asp-for="PathUrl" class="form-control" />
+                <span asp-validation-for="PathUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedDate" class="control-label"></label>
+                <input asp-for="CreatedDate" class="form-control" />
+                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifyDate" class="control-label"></label>
+                <input asp-for="ModifyDate" class="form-control" />
+                <span asp-validation-for="ModifyDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifyBy" class="control-label"></label>
+                <input asp-for="ModifyBy" class="form-control" />
+                <span asp-validation-for="ModifyBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Language" class="control-label"></label>
+                <input asp-for="Language" class="form-control" />
+                <span asp-validation-for="Language" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsConstance" /> @Html.DisplayNameFor(model => model.IsConstance)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfView" class="control-label"></label>
+                <input asp-for="NumberOfView" class="form-control" />
+                <span asp-validation-for="NumberOfView" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

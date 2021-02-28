@@ -1,0 +1,15 @@
+﻿body {
+    font-size: 14px;
+}
+.btn-edit {
+    color: #007bff !important;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.btn-delete {
+    color: #dc3545 !important;
+    cursor: pointer;
+}
+.swal2-title {
+    font-size: 1.475em;
+}

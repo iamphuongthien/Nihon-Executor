@@ -1,0 +1,75 @@
+﻿@model IEnumerable<OCOP_SuaAnSinh.Models.Post>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var stt = 0;
+}
+<link href="~/Admin/Post/main.css" rel="stylesheet" />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Chuyên mục bài viết</h3>
+                    <a href="~/Admin/Posts/Create" class="btn btn-info float-right">Thêm mới</a>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Tiêu đề
+                                </th>
+                                <th>
+                                    Tác giả
+                                </th>
+                                <th>
+                                    Ảnh bìa
+                                </th>
+                                <th>
+                                    <i class="fas fa-cogs"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                stt++;
+                                <tr>
+                                    <td>
+                                        @stt
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Author)
+                                    </td>
+                                    <td>
+                                        <img width="50" height="50" src="@item.ImageUrl" />
+                                    </td>
+                                    <td>
+                                        <a class="cursor-pointer btn-edit icon-btn" data-id="@item.PostCategoryId"><i class="fa fa-edit"></i></a>
+                                        <a class="cursor-pointer btn-delete icon-btn" data-id="@item.PostCategoryId"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+@section scripts{
+    <script src="~/Admin/Post/index.js"></script>
+}

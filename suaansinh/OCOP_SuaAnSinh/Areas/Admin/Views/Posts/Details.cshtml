@@ -1,0 +1,145 @@
+﻿@model OCOP_SuaAnSinh.Models.Post
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Abstract)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Abstract)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ContentHTML)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ContentHTML)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tags)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tags)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsPublish)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsPublish)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsHot)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsHot)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PathUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PathUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PostCategory)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PostCategory.PostCategoryId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModifyDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModifyDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModifyBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModifyBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsConstance)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsConstance)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumberOfView)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumberOfView)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PostId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

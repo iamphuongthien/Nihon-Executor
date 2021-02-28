@@ -1,0 +1,108 @@
+﻿@model OCOP_SuaAnSinh.Models.Post
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Admin/Post/main.css" rel="stylesheet" />
+<div class="card middle-card">
+    <div class="card-header">
+        <h3 class="card-title">Thêm mới bài viết</h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmCreatePost" }))
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <label for="Title" class="control-label">Tiêu đề</label>
+                    <span class="star-required">*</span>
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="Date" class="control-label">Ngày đăng</label>
+                            <span class="star-required">*</span>
+                            <input id="Date" name="Date" required hidden />
+                            <input id="DateShow" class="form-control" , required />
+                            @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="PostCategoryId" class="control-label">Chuyên mục</label>
+                            <span class="star-required">*</span>
+                            @Html.DropDownList("PostCategoryId", null, "--Chọn chuyên mục", htmlAttributes: new { @class = "form-control", required = "required" })
+                            @Html.ValidationMessageFor(model => model.PostCategoryId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Tags, htmlAttributes: new { @class = "control-label " })
+                            <input id="Tags" name="Tags" hidden />
+                            <select id="SelectTag" multiple></select>
+                            @Html.ValidationMessageFor(model => model.Tags, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="Author" class="control-label">Nguồn/Tác giả</label>
+                            <span class="star-required">*</span>
+                            @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Abstract" class="control-label">Tóm tắt</label>
+                    <span class="star-required">*</span>
+                    @Html.TextAreaFor(model => model.Abstract, new { @class = "form-control", rows = 3, required = "required" })
+                    @Html.ValidationMessageFor(model => model.Abstract, "", new { @class = "text-danger" })
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="form-group">
+                            <label for="ImageUrl" class="control-label">Ảnh bìa</label>
+                            @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="btn-in-form">
+                            <button type="button" id="pickImage" class="btn btn-primary">Chọn file</button>
+                            <button type="button" id="cleartextbox" class="btn btn-danger">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-group">
+                    <label for="ContentHTML" class="control-label">Nội dung</label>
+                    <span class="star-required">*</span>
+                    @Html.EditorFor(model => model.ContentHTML, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    @Html.ValidationMessageFor(model => model.ContentHTML, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        }
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+        <input id="btn_save_create" type="button" value="Lưu lại" class="btn btn-success" />
+        <a id="btn_cancel" class="btn btn-default">Thoát</a>
+    </div>
+    <!-- /.card-footer-->
+</div>
+@section scripts{
+    <script src="~/Admin/Post/create.js"></script>
+}
+

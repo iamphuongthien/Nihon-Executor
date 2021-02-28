@@ -1,0 +1,144 @@
+﻿<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <!-- Add icons to the links using the .nav-icon class
+         with font-awesome or any other icon font library -->
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+                Bảng điều khiển
+            </p>
+        </a>
+    </li>
+    <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+                Bài viết
+                <i class="fas fa-angle-left right"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="~/Admin/Posts" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Tất cả bài viết</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Bài viết mới</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="~/Admin/PostCategories" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Chuyên mục</p>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+
+    <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-chart-pie"></i>
+            <p>
+                Sản phẩm
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Tất cả sản phẩm</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Thêm mới</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="~/Admin/ProductCategories" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Danh mục</p>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+                Quản lý đơn hàng
+            </p>
+        </a>
+    </li>
+    <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-chart-pie"></i>
+            <p>
+                Quản lý danh mục
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Quản lý menu</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                @*@Html.ActionLink("Quản lý banner", "Index", "Banners",*@
+                                                                @*new { area = "Admin" })*@
+                <a href="~/Admin/Banners" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                        Quản lý banner
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="~/Admin/Partners" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Quản lý đối tác</p>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+                Thư viện
+            </p>
+        </a>
+    </li>
+    <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-chart-pie"></i>
+            <p>
+                Quản lý hệ thống
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Quản lý người dùng</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Hệ thống</p>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>

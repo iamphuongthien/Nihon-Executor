@@ -1,0 +1,69 @@
+﻿@model IEnumerable<OCOP_SuaAnSinh.Models.ProductCategory>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var stt = 0;
+}
+<link href="~/Admin/ProductCategory/main.css" rel="stylesheet" />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Danh mục sản phẩm</h3>
+                    <button id="btn_them" type="button" class="btn btn-info float-right">Thêm mới</button>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Danh mục sản phẩm
+                                </th>
+                                <th>
+                                    Loại
+                                </th>
+                                <th>
+                                    <i class="fas fa-cogs"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                stt++;
+                                <tr>
+                                    <td>
+                                        @stt
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PathUrl)
+                                    </td>
+                                    <td>
+                                        <a class="cursor-pointer btn-edit icon-btn" data-id="@item.ProductCategoryId"><i class="fa fa-edit"></i></a>
+                                        <a class="cursor-pointer btn-delete icon-btn" data-id="@item.ProductCategoryId"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+@section scripts{
+    <script src="~/Admin/ProductCategory/index.js"></script>
+}
